@@ -51,13 +51,13 @@ func run() {
 	// lips5748@joyowo.com
 	var EmailAddr = make(map[string]string)
 
-	EmailAddr["南区"] = "gaol@joyoget.com"
-	EmailAddr["北区"] = "yux@joyoget.com"
-	EmailAddr["南区+北区"] = "songwt@joyoget.com"
+	EmailAddr["南区"] = "xxx.com"
+	EmailAddr["北区"] = "xxx.com"
+	EmailAddr["南区+北区"] = "xxx.com"
 
-	//EmailAddr["南区"] = "lips5748@joyowo.com"
-	//EmailAddr["北区"] = "lips5748@joyowo.com"
-	//EmailAddr["南区+北区"] = "lips5748@joyowo.com"
+	//EmailAddr["南区"] = "xxxx"
+	//EmailAddr["北区"] = "xxxx"
+	//EmailAddr["南区+北区"] = "xxx"
 
 	// 查询所有城市修改时间
 	c_map := views.NotUploadedCity()
@@ -157,7 +157,7 @@ func run() {
 
 		if _, err := os.Stat(fileName); err != nil {
 			fmt.Println(err)
-			err := views.Send(area+"没有附件", "jc@joyowo.com", "Asd159357", "没有附件", []string{"andapy@163.com"}, []string{}, []string{""})
+			err := views.Send(area+"没有附件", "xxxx.com", "xxx", "没有附件", []string{"xxxx"}, []string{}, []string{""})
 			log.Println(err)
 			continue
 		}
@@ -174,16 +174,16 @@ func run() {
 		// 添加抄送人
 		if area == "南区+北区" {
 			// "chenm@joyoget.com"
-			err := views.Send(content+"<br>"+text, "jc@joyowo.com", "Asd159357", content, []string{EmailAddr[area]}, []string{"chenm@joyoget.com"}, enclosure)
-			//err := views.Send(content + "<br>" + text, "jc@joyowo.com", "Asd159357", content,  []string{EmailAddr[area]}, []string{}, enclosure)
+			err := views.Send(content+"<br>"+text, "xxx", "xxx", content, []string{EmailAddr[area]}, []string{"xxxx.com"}, enclosure)
+			//err := views.Send(content + "<br>" + text, "xxx", "xxx", content,  []string{EmailAddr[area]}, []string{}, enclosure)
 			if err != nil {
 				//fmt.Println(err)
 				log.Println(err)
 			}
 		} else {
 			// "chenm@joyoget.com"
-			err := views.Send(content+"<br>"+text, "jc@joyowo.com", "Asd159357", content, []string{EmailAddr[area]}, []string{"chenm@joyoget.com", "yuj@joyoget.com"}, enclosure)
-			//err := views.Send(content + "<br>" + text, "jc@joyowo.com", "Asd159357", content,  []string{EmailAddr[area]}, []string{}, enclosure)
+			err := views.Send(content+"<br>"+text, "xxxx", "xxx", content, []string{EmailAddr[area]}, []string{"xxx", "xxx"}, enclosure)
+			//err := views.Send(content + "<br>" + text, "xxx", "xxxx", content,  []string{EmailAddr[area]}, []string{}, enclosure)
 			if err != nil {
 				//fmt.Println(err)
 				log.Println(err)
@@ -191,7 +191,7 @@ func run() {
 
 		}
 
-		err := views.Send(content+"<br>"+text, "jc@joyowo.com", "Asd159357", content, []string{"andapy@163.com"}, []string{}, enclosure)
+		err := views.Send(content+"<br>"+text, "xxx", "xxx", content, []string{"andapy@163.com"}, []string{}, enclosure)
 		if err != nil {
 			//fmt.Println(err)
 			log.Println(err)

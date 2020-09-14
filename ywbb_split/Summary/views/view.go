@@ -145,7 +145,7 @@ func UpdateExcel(area, fileName string) {
 		// 有错 发送邮件
 		if errs != nil {
 			log.Println(errs)
-			err := Send("发送失败", "jc@joyowo.com", "Asd159357", "发送失败", []string{"andapy@163.com"}, []string{}, []string{})
+			err := Send("发送失败", "xxxx", "xxx", "发送失败", []string{"andapy@163.com"}, []string{}, []string{})
 			log.Println(err)
 			panic("UpdateExcel")
 
